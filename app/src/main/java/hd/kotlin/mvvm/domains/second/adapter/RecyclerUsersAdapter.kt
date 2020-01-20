@@ -27,13 +27,13 @@ class RecyclerUsersAdapter : RecyclerView.Adapter<RecyclerUsersAdapter.ViewHolde
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val user = users.get(position)
+        val user = users[position]
         holder.tvId.text = user.id.toString()
         holder.tvUserName.text = user.name
         holder.uLine.visibility = if (position != users.size - 1) View.VISIBLE else View.INVISIBLE
-        holder.itemView.setOnClickListener(View.OnClickListener {
+        holder.itemView.setOnClickListener {
             itemClickListener?.onClick(user)
-        })
+        }
     }
 
     fun updateData(users: MutableList<User>) {

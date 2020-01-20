@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import hd.kotlin.mvvm.R
 import hd.kotlin.mvvm.domains.base.BaseViewModel
 import hd.kotlin.mvvm.domains.second.SecondActivity
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var ob: Observer<Any>
 
     private fun initViewModel() {
-        viewModel = ViewModelProviders.of(this)[BaseViewModel::class.java]
+        viewModel = ViewModelProvider(this)[BaseViewModel::class.java]
     }
 
     private fun initView() {
